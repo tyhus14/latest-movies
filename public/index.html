@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Test</title>
+	<meta name="description" content="" />
+	<meta name="keywords"  content="" />
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/all.css" />
+
+</head>
+<body>
+    <div class="container">
+		<div id="movieList">
+		  <h1>Latest Movies</h1>
+
+		  <ul class="movie-list">
+		    <li class="movie flip-container" v-for="item in items.results | orderBy 'release_date' -1" ontouchstart="this.classList.toggle('hover');">
+				<span class="movie__title">{{item.title}}</span>
+				<div class="flipper">
+					<div class="front">
+						<img class="movie__image" src="http://image.tmdb.org/t/p/w500/{{item.poster_path}}" alt="Poster: {{item.title}}">
+					</div>
+					<div class="back">
+						<span class="movie__description">{{item.overview}}</span>
+					</div>
+				</div>
+		    </li>
+		  </ul>
+
+		</div>
+    </div>
+</body>
+
+<script type="text/javascript" src="js/all.js"></script>
+</html>
