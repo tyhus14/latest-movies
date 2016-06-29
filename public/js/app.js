@@ -4541,24 +4541,20 @@ process.umask = function() { return 0; };
 
 require("babelify/polyfill");
 
-require("./keys");
-
 require("./movie-api");
 
-},{"./keys":194,"./movie-api":195,"babelify/polyfill":3}],194:[function(require,module,exports){
+},{"./movie-api":194,"babelify/polyfill":3}],194:[function(require,module,exports){
 "use strict";
 
 var apiURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=efaa926100b4c162580ee08f41d6439e";
-
-},{}],195:[function(require,module,exports){
-'use strict';
 
 var demoList = new Vue({
 
   el: '#movieList',
 
   data: {
-    items: []
+    items: [],
+    firstItem: []
   },
 
   created: function created() {
@@ -4569,6 +4565,7 @@ var demoList = new Vue({
     fetchData: function fetchData() {
       this.$http.get(apiURL, function (data) {
         this.items = data;
+        this.firstItem = data.results[0].backdrop_path;
       });
     }
 

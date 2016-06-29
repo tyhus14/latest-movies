@@ -3,7 +3,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Test</title>
+	<title>Latest Movies</title>
 	<meta name="description" content="" />
 	<meta name="keywords"  content="" />
 	<meta charset="utf-8">
@@ -13,8 +13,12 @@
 
 </head>
 <body>
-    <div class="container">
-		<div id="movieList">
+	<div id="movieList">
+		<div class="hero">
+			<img v-bind:src="'http://image.tmdb.org/t/p/w1000/'+ firstItem" alt="" />
+		</div>
+
+	    <div class="container">
 		  <h1>Latest Movies</h1>
 
 		  <ul class="movie-list">
@@ -22,10 +26,10 @@
 				<span class="movie__title">{{item.title}}</span>
 				<div class="flipper">
 					<div class="front">
-						<img class="movie__image" src="http://image.tmdb.org/t/p/w500/{{item.poster_path}}" alt="Poster: {{item.title}}">
+						<img class="movie__image" v-bind:src="'http://image.tmdb.org/t/p/w500/'+ item.poster_path" alt="Poster: {{ item.title }}">
 					</div>
 					<div class="back">
-						<span class="movie__description">{{item.overview}}</span>
+						<span class="movie__description">{{ item.overview }}</span>
 					</div>
 				</div>
 		    </li>
