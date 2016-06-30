@@ -15,14 +15,14 @@
 <body>
 	<div id="movieList">
 		<div class="hero">
-			<img v-bind:src="'http://image.tmdb.org/t/p/w1000/'+ firstItem" alt="" />
+			<img v-bind:src="'http://image.tmdb.org/t/p/w1000/'+ firstItem" v-if="firstItem" alt="" />
 		</div>
 
 	    <div class="container">
 		  <h1>Latest Movies</h1>
 
 		  <ul class="movie-list">
-		    <li class="movie flip-container" v-for="item in items.results | orderBy 'release_date' -1" ontouchstart="this.classList.toggle('hover');">
+		    <li class="movie flip-container" v-for="item in items.results | orderBy 'release_date' -1">
 				<span class="movie__title">{{item.title}}</span>
 				<div class="flipper">
 					<div class="front">

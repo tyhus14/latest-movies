@@ -16745,26 +16745,25 @@ var apiURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=efaa926100b
 
 var demoList = new Vue({
 
-  el: '#movieList',
+    el: '#movieList',
 
-  data: {
-    items: [],
-    firstItem: []
-  },
+    data: {
+        items: [],
+        firstItem: null
+    },
 
-  created: function created() {
-    this.fetchData();
-  },
+    created: function created() {
+        this.fetchData();
+    },
 
-  methods: {
-    fetchData: function fetchData() {
-      this.$http.get(apiURL, function (data) {
-        this.items = data;
-        this.firstItem = data.results[0].backdrop_path;
-      });
+    methods: {
+        fetchData: function fetchData() {
+            this.$http.get(apiURL, function (data) {
+                this.items = data;
+                this.firstItem = data.results[0].backdrop_path;
+            });
+        }
     }
-
-  }
 });
 
 },{}]},{},[193]);
