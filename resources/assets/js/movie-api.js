@@ -1,4 +1,7 @@
-var apiURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=efaa926100b4c162580ee08f41d6439e";
+import { apiKey as apiKeyNew } from './keys';
+
+var apiURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=" + apiKeyNew;
+// api.themoviedb.org/3/tv/1399/season/1/episode/1?api_key=
 
 var demoList = new Vue({
 
