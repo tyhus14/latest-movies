@@ -5738,6 +5738,7 @@ button.close {
   .hero img {
     width: 100%; }
 
+/* Mixin for aspect ratio  */
 .movie-list {
   display: -ms-flexbox;
   display: flex;
@@ -5771,7 +5772,7 @@ button.close {
     display: block;
     content: "";
     width: 100%;
-    padding-top: 177.77778%; }
+    padding-top: 150%; }
   .flip-container > div {
     position: absolute;
     top: 0;
