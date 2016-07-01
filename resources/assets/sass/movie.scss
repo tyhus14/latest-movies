@@ -1,18 +1,21 @@
+/* Mixin for aspect ratio  */
 @mixin aspect-ratio($width, $height) {
-  position: relative;
-  &:before {
-    display: block;
-    content: "";
-    width: 100%;
-    padding-top: ($height / $width) * 100%;
-  }
-  > div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+    position: relative;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+    
+    > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 }
 
 .movie-list {
@@ -21,10 +24,6 @@
     flex-wrap: wrap;
     list-style-type: none;
     padding-left: 0;
-}
-
-.movie {
-    // width: 15%;
 }
 
 .movie__title {
@@ -41,13 +40,14 @@
 .flip-container {
 	perspective: 1000px;
 }
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.hover .flipper {
-		transform: rotateY(180deg);
-	}
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
 
 .flip-container {
-    @include aspect-ratio(9, 16);
+    @include aspect-ratio(2, 3);
 	width: 100%;
 
     @include breakpoint(mobile) {
@@ -57,6 +57,7 @@
     @include breakpoint(tablet) {
         width: 30%;
     }
+
     @include breakpoint(desktop) {
         width: 18%;
     }
@@ -66,14 +67,12 @@
 .flipper {
 	transition: 0.6s;
 	transform-style: preserve-3d;
-
 	position: relative;
 }
 
 /* hide back of pane during swap */
 .front, .back {
 	backface-visibility: hidden;
-
 	position: absolute;
 	top: 0;
 	left: 0;
