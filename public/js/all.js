@@ -16746,10 +16746,23 @@ require("babelify/polyfill");
 
 require("./movie-api");
 
-},{"./movie-api":194,"babelify/polyfill":3}],194:[function(require,module,exports){
+},{"./movie-api":195,"babelify/polyfill":3}],194:[function(require,module,exports){
 "use strict";
 
-var apiURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=efaa926100b4c162580ee08f41d6439e";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var apiKey = "efaa926100b4c162580ee08f41d6439e";
+
+exports.apiKey = apiKey;
+
+},{}],195:[function(require,module,exports){
+'use strict';
+
+var _keys = require('./keys');
+
+var apiURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=" + _keys.apiKey;
+// api.themoviedb.org/3/tv/1399/season/1/episode/1?api_key=
 
 var demoList = new Vue({
 
@@ -16774,4 +16787,4 @@ var demoList = new Vue({
     }
 });
 
-},{}]},{},[193]);
+},{"./keys":194}]},{},[193]);
