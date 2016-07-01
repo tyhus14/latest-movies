@@ -24,6 +24,7 @@
 		  <ul class="movie-list">
 		    <li class="movie flip-container" v-for="item in items.results | orderBy 'release_date' -1">
 				<span class="movie__title">{{item.title}}</span>
+				<span class="movie__date">{{item.release_date}}</span>
 				<div class="flipper">
 					<div class="front">
 						<img class="movie__image" v-bind:src="'http://image.tmdb.org/t/p/w500/'+ item.poster_path" alt="Poster: {{ item.title }}">
