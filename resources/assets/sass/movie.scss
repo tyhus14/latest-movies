@@ -1,3 +1,20 @@
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
 .movie-list {
     display: flex;
     justify-content: space-between;
@@ -7,7 +24,7 @@
 }
 
 .movie {
-    width: 15%;
+    // width: 15%;
 }
 
 .movie__title {
@@ -29,9 +46,20 @@
 		transform: rotateY(180deg);
 	}
 
-.flip-container, .front, .back {
-	width: 320px;
-	height: 480px;
+.flip-container {
+    @include aspect-ratio(9, 16);
+	width: 100%;
+
+    @include breakpoint(mobile) {
+        width: 48%;
+    }
+
+    @include breakpoint(tablet) {
+        width: 30%;
+    }
+    @include breakpoint(desktop) {
+        width: 18%;
+    }
 }
 
 /* flip speed goes here */
