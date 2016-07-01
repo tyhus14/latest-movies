@@ -17,6 +17,7 @@ elixir(function(mix) {
     mix
     .browserify("app.js", "public/js/app.js", "resources/assets/js")
     .scripts([
+        "resources/assets/js/modernizr-2.8.3.min.js",
         "node_modules/jquery/dist/jquery.js",
         "node_modules/vue/dist/vue.min.js",
         "node_modules/vue-resource/dist/vue-resource.min.js",
