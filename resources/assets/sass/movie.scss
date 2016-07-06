@@ -36,14 +36,26 @@
     display: block;
 }
 
+.movie__date {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
 .movie__image {
     width: 100%;
+    @include breakpoint(desktop) {
+        height: 393px;
+    }
 }
 
 .movie__description {
     @include font-size(14px);
     overflow-y: scroll;
     display: block;
+
+    @include breakpoint(desktop) {
+        max-height: 330px;
+    }
 }
 
 /* entire container, keeps perspective */
@@ -70,7 +82,7 @@
     }
 
     @include breakpoint(desktop) {
-        width: 18%;
+        width: 23%;
     }
 }
 
@@ -100,4 +112,21 @@
 /* back, initially hidden pane */
 .back {
 	transform: rotateY(180deg);
+    background-color: #fff;
+    height: 100%;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        height: 30px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to bottom, transparent 0%, #fff 100%);
+
+        @include breakpoint(desktop) {
+            height: 50px;
+        }
+    }
 }
