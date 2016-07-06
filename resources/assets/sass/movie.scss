@@ -19,7 +19,7 @@
 }
 
 .movie {
-    // overflow: hidden;   
+    // overflow: hidden;
 }
 
 .movie-list {
@@ -40,6 +40,12 @@
     width: 100%;
 }
 
+.movie__description {
+    @include font-size(14px);
+    overflow-y: scroll;
+    display: block;
+}
+
 /* entire container, keeps perspective */
 .flip-container {
 	perspective: 1000px;
@@ -53,6 +59,7 @@
 .flip-container {
     @include aspect-ratio(2, 3);
 	width: 100%;
+    margin-top: 2em;
 
     @include breakpoint(mobile) {
         width: 48%;
@@ -87,6 +94,7 @@
 	z-index: 2;
 	/* for firefox 31 */
 	transform: rotateY(0deg);
+    box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
 /* back, initially hidden pane */
