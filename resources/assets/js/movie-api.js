@@ -20,7 +20,8 @@ var demoList = new Vue({
         fetchData: function () {
             this.$http.get( apiURL, function( data ) {
                 this.items = data;
-                this.firstItem = data.results[0].backdrop_path;
+                var randomNumber = Math.floor(Math.random()*(6-0+1)+0);
+                this.firstItem = data.results[randomNumber].backdrop_path;
             });
         }
     }
