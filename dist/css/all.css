@@ -5740,9 +5740,6 @@ html, body {
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased; }
 
-body {
-  background-image: url("../images/bg.png"); }
-
 .container--flex {
   display: -ms-flexbox;
   display: flex;
@@ -6257,24 +6254,14 @@ table {
   font-weight: bold;
   display: block; }
 
-.movie__date {
-  display: block;
-  margin-bottom: 0.5em; }
-
 .movie__image {
   width: 100%; }
-  @media (min-width: 1200px) {
-    .movie__image {
-      height: 393px; } }
 
 .movie__description {
   font-size: 14px;
   font-size: 0.875rem;
   overflow-y: scroll;
   display: block; }
-  @media (min-width: 1200px) {
-    .movie__description {
-      max-height: 330px; } }
 
 /* entire container, keeps perspective */
 .flip-container {
@@ -6307,7 +6294,7 @@ table {
       width: 30%; } }
   @media (min-width: 1200px) {
     .flip-container {
-      width: 23%; } }
+      width: 18%; } }
 
 /* flip speed goes here */
 .flipper {
@@ -6331,18 +6318,4 @@ table {
 
 /* back, initially hidden pane */
 .back {
-  transform: rotateY(180deg);
-  background-color: #fff;
-  height: 100%;
-  position: relative; }
-  .back:before {
-    content: "";
-    position: absolute;
-    height: 30px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to bottom, transparent 0%, #fff 100%); }
-    @media (min-width: 1200px) {
-      .back:before {
-        height: 50px; } }
+  transform: rotateY(180deg); }
