@@ -1,0 +1,31 @@
+/*===================================*\
+    `CALC-REM
+\*===================================*/
+
+// $font_base_size: 16px;
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+html, body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container--flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    filter: grayscale(70%);
+}
