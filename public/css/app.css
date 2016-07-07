@@ -6262,7 +6262,10 @@ table {
   margin-bottom: 0.5em; }
 
 .movie__image {
-  width: 100%; }
+  width: 60px; }
+  @media (min-width: 480px) {
+    .movie__image {
+      width: 100%; } }
   @media (min-width: 1200px) {
     .movie__image {
       height: 393px; } }
@@ -6277,31 +6280,37 @@ table {
       max-height: 330px; } }
 
 /* entire container, keeps perspective */
-.flip-container {
-  perspective: 1000px; }
+@media (min-width: 480px) {
+  .flip-container {
+    perspective: 1000px; } }
 
 /* flip the pane when hovered */
-.flip-container:hover .flipper, .flip-container.hover .flipper {
-  transform: rotateY(180deg); }
+@media (min-width: 480px) {
+  .flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg); } }
+
+@media (min-width: 480px) {
+  .flip-container.active .flipper {
+    transform: rotateY(180deg); } }
 
 .flip-container {
-  position: relative;
   width: 100%;
   margin-top: 2em; }
-  .flip-container:before {
-    display: block;
-    content: "";
-    width: 100%;
-    padding-top: 150%; }
-  .flip-container > div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; }
   @media (min-width: 480px) {
     .flip-container {
-      width: 48%; } }
+      position: relative;
+      width: 48%; }
+      .flip-container:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: 150%; }
+      .flip-container > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; } }
   @media (min-width: 960px) {
     .flip-container {
       width: 30%; } }
@@ -6311,38 +6320,49 @@ table {
 
 /* flip speed goes here */
 .flipper {
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  position: relative; }
+  display: -ms-flexbox;
+  display: flex; }
+  @media (min-width: 480px) {
+    .flipper {
+      display: block;
+      transition: 0.6s;
+      transform-style: preserve-3d;
+      position: relative; } }
 
 /* hide back of pane during swap */
-.front, .back {
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0; }
+@media (min-width: 480px) {
+  .front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0; } }
 
 /* front pane, placed above back */
-.front {
-  z-index: 2;
-  /* for firefox 31 */
-  transform: rotateY(0deg);
-  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
+@media (min-width: 480px) {
+  .front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+    box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; } }
 
 /* back, initially hidden pane */
 .back {
-  transform: rotateY(180deg);
-  background-color: #fff;
-  height: 100%;
-  position: relative; }
-  .back:before {
-    content: "";
-    position: absolute;
-    height: 30px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to bottom, transparent 0%, #fff 100%); }
-    @media (min-width: 1200px) {
+  margin-left: 1em; }
+  @media (min-width: 480px) {
+    .back {
+      margin-left: 0;
+      transform: rotateY(180deg);
+      background-color: #fff;
+      height: 100%;
+      position: relative; }
+      .back:before {
+        content: "";
+        position: absolute;
+        height: 30px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to bottom, transparent 0%, #fff 100%); } }
+    @media (min-width: 480px) and (min-width: 1200px) {
       .back:before {
         height: 50px; } }
