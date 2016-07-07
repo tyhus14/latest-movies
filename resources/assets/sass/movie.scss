@@ -99,9 +99,8 @@
 
 /* flip speed goes here */
 .flipper {
-    display: flex;
+    display: block;
     @include breakpoint(mobile) {
-        display: block;
     	transition: 0.6s;
     	transform-style: preserve-3d;
     	position: relative;
@@ -120,20 +119,20 @@
 
 /* front pane, placed above back */
 .front {
+    width: 60px;
+
     @include breakpoint(mobile) {
+        box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        width: auto;
     	z-index: 2;
     	/* for firefox 31 */
     	transform: rotateY(0deg);
-        box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     }
 }
 
 /* back, initially hidden pane */
 .back {
-    margin-left: 1em;
-
     @include breakpoint(mobile) {
-        margin-left: 0;
     	transform: rotateY(180deg);
         background-color: #fff;
         height: 100%;
