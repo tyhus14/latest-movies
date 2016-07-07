@@ -6320,11 +6320,9 @@ table {
 
 /* flip speed goes here */
 .flipper {
-  display: -ms-flexbox;
-  display: flex; }
+  display: block; }
   @media (min-width: 480px) {
     .flipper {
-      display: block;
       transition: 0.6s;
       transform-style: preserve-3d;
       position: relative; } }
@@ -6338,31 +6336,31 @@ table {
     left: 0; } }
 
 /* front pane, placed above back */
-@media (min-width: 480px) {
-  .front {
-    z-index: 2;
-    /* for firefox 31 */
-    transform: rotateY(0deg);
-    box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; } }
+.front {
+  width: 60px; }
+  @media (min-width: 480px) {
+    .front {
+      box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      width: auto;
+      z-index: 2;
+      /* for firefox 31 */
+      transform: rotateY(0deg); } }
 
 /* back, initially hidden pane */
-.back {
-  margin-left: 1em; }
-  @media (min-width: 480px) {
-    .back {
-      margin-left: 0;
-      transform: rotateY(180deg);
-      background-color: #fff;
-      height: 100%;
-      position: relative; }
-      .back:before {
-        content: "";
-        position: absolute;
-        height: 30px;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(to bottom, transparent 0%, #fff 100%); } }
+@media (min-width: 480px) {
+  .back {
+    transform: rotateY(180deg);
+    background-color: #fff;
+    height: 100%;
+    position: relative; }
+    .back:before {
+      content: "";
+      position: absolute;
+      height: 30px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to bottom, transparent 0%, #fff 100%); } }
     @media (min-width: 480px) and (min-width: 1200px) {
       .back:before {
         height: 50px; } }
