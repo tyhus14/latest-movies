@@ -23,6 +23,6 @@ var demoList = new Vue({
                 var randomNumber = Math.floor(Math.random()*(6-0+1)+0);
                 this.firstItem = data.results[randomNumber].backdrop_path;
             });
-        }
+        },
     }
 });

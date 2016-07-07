@@ -23,9 +23,8 @@
 			</div>
 		</div>
 	    <div class="container">
-		    <!-- <h1>Latest Movies</h1> -->
 		    <ul class="movie-list">
-			    <li class="movie flip-container" v-for="item in items.results | orderBy 'release_date' -1">
+			    <li class="movie flip-container" v-for="item in items.results | orderBy 'release_date' -1" v-on:click="movieActivated" v-bind:class={'active: isActive'}>
 					<div class="flipper">
 						<div class="front">
 							<img class="movie__image" v-bind:src="'http://image.tmdb.org/t/p/w500/'+ item.poster_path" alt="Poster: {{ item.title }}">
