@@ -6352,7 +6352,8 @@ table {
     transform: rotateY(180deg);
     background-color: #fff;
     height: 100%;
-    position: relative; }
+    position: relative;
+    padding: 15px; }
     .back:before {
       content: "";
       position: absolute;
